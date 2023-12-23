@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: mystic-forge.github.io/Bestitched-Docs
+branding:
+  title: Bestitched
+  label: Docs
+links:
+  - text: Home
+    link: https://mystic-forge.github.io/Bestitched-Docs/Bestitched
+# footer:
+#   copyright: "&copy; Copyright . All rights reserved."
