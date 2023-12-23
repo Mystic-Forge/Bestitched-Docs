@@ -4,8 +4,8 @@ url: mystic-forge.github.io/Bestitched-Docs
 branding:
   title: Bestitched
   label: Docs
-links:
-  - text: Home
-    link: https://mystic-forge.github.io/Bestitched-Docs/bestitched/
+# links:
+  # - text: Home
+  #   link: https://mystic-forge.github.io/Bestitched-Docs/
 # footer:
 #   copyright: "&copy; Copyright . All rights reserved."

@@ -1,7 +1,7 @@
 # Selection Table
 ## Basic drop definition
 The text in the brackets is the item id. For items outside of the Bestitched package, you will need quotes to allow for the colon.
-```toml
+```
 [[coin]]
 
 [["my_package:my_item"]]
