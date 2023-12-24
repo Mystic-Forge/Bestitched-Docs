@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Bestitched-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756653044548">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756735706599">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.756653044548" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756735706599" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756653044548" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756653044548" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.756653044548" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -176,7 +175,7 @@
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">drop_count = 1
+<pre class="language-none"><code v-pre class="language-none">drop_count = 1
 
 [[...]]
 weight = 1
@@ -202,7 +201,7 @@ triggers = []</code></pre>
 </doc-anchor-target>
 <p>This defines how many random pulls will be made from the selection table.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">drop_count = 1</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drop_count = 1</code></pre>
 </doc-codeblock></div>
 <p>Drop Count can also be defined with <doc-anchor-trigger to="#range-syntax">range syntax</doc-anchor-trigger> or <doc-anchor-trigger to="#list-syntax">list syntax</doc-anchor-trigger>.</p>
 <doc-anchor-target id="drop-fields">
@@ -220,7 +219,7 @@ triggers = []</code></pre>
 </doc-anchor-target>
 <p>Assuming <code v-pre>always_drop</code> is false or not defined, this will act as the chance of this drop being selected.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml"># This has a 1 in 10 chance of being selected
+<pre class="language-none"><code v-pre class="language-none"># This has a 1 in 10 chance of being selected
 [[bone]]
 weight = 1
 
@@ -243,7 +242,7 @@ weight = 9</code></pre>
 </doc-anchor-target>
 <p>Defines the amount of this item that will be grabbed if this item is grabbed.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">[[bone]]
+<pre class="language-none"><code v-pre class="language-none">[[bone]]
 count = 10 # Drops 10 bones</code></pre>
 </doc-codeblock></div>
 <p>Count can also be defined with <doc-anchor-trigger to="#range-syntax">range syntax</doc-anchor-trigger> or <doc-anchor-trigger to="#list-syntax">list syntax</doc-anchor-trigger>.</p>
@@ -260,7 +259,7 @@ count = 10 # Drops 10 bones</code></pre>
 </blockquote>
 <p>Once an item has been drawn (either by the grabber, by groups, or by triggers) as many times as it&#x27;s stock allows, it will never be drawn again (even if it&#x27;s group is triggered).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">[[bone]]
+<pre class="language-none"><code v-pre class="language-none">[[bone]]
 stock = 2 # This item can be grabbed 2 times at max</code></pre>
 </doc-codeblock></div>
 <p>This field can not use any special syntax.</p>
@@ -273,7 +272,7 @@ stock = 2 # This item can be grabbed 2 times at max</code></pre>
 <p>With a default of 0, this field can be ignored in most cases. It is used as a way to &quot;spend&quot; a balance when selecting a table of things.
 This is mostly used in the context of enemy wave spawning, but it can be used in other places too. For this example, we&#x27;ll show it in the context of spawning enemies. Starting with a basic table file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">[[slime]]
+<pre class="language-none"><code v-pre class="language-none">[[slime]]
 cost = 1
 
 [[slime_boss]]
@@ -288,7 +287,7 @@ cost = 20</code></pre>
 </doc-anchor-target>
 <p>When an item with groups is grabbed, all items that share a group are grabbed at the same time. This only consumes 1 grab.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">[[bone]]
+<pre class="language-none"><code v-pre class="language-none">[[bone]]
 groups = [1]
 
 [[coin]]
@@ -306,7 +305,7 @@ groups = [0, 1]</code></pre>
 </doc-anchor-target>
 <p>A trigger is a one way group. It will cause anything in the specified group ids to be grabbed, but does not say anything about what group the item is in.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">[[bone]]
+<pre class="language-none"><code v-pre class="language-none">[[bone]]
 triggers = [0]
 
 [[coin]]
@@ -327,7 +326,7 @@ groups = [0]</code></pre>
 </doc-anchor-target>
 <p>Defienes an integer randomly chosen within the range <code v-pre>min..max</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">drops_count = &quot;0..10&quot; # Chooses a random number from 0 to 10 (inclusive).</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = &quot;0..10&quot; # Chooses a random number from 0 to 10 (inclusive).</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="list-syntax">
     <h2>
@@ -337,7 +336,7 @@ groups = [0]</code></pre>
 </doc-anchor-target>
 <p>Defines an integer randomly chosen from a list <code v-pre>n1,n2,n3</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">drops_count = &quot;0,10&quot; # Choses either 0 or 10</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = &quot;0,10&quot; # Choses either 0 or 10</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="chance-object">
     <h2>
@@ -348,7 +347,7 @@ groups = [0]</code></pre>
 <p>To be used in place of Ranges or Lists, this alters the behaviour of integer functions and extends their capabilities. As it stands, there is only 1 possible extension.</p>
 <p>Below is a basic use of a Chance Object:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-toml"><code v-pre class="language-toml">drops_count = { value = &quot;0..5&quot;, chance = 0.5 }</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = { value = &quot;0..5&quot;, chance = 0.5 }</code></pre>
 </doc-codeblock></div>
 <p>As it may be clear, this count will evaluate to a range between 0 and 5. However, unlike the Range Syntax, this range is weighted to give lower values more frequently than higher values. A chance below 1 will weigh towards the lower bound and a chance above 1 weighs towards the upper bound. A chance of exactly 1 means equal probability across all values. The bounds are never exceeded.</p>
 
@@ -417,6 +416,6 @@ groups = [0]</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Selection Table", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Selection Table", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
