@@ -4,7 +4,7 @@ The text in the brackets is the item id. For items outside of the Bestitched pac
 ```
 [[coin]]
 
-[["my_package:my_item"]]
+[['my_package:my_item']]
 ```
 
 ## Defaults
@@ -62,7 +62,7 @@ Count can also be defined with [range syntax](#range-syntax) or [list syntax](#l
 ## Stock
 This defines how many times this item can be randomly picked from the selection table.
 
-At the start of a draw, all items (excluding those defining `always_drop` as true) are added to a "bag" `stock` number of times. 
+At the start of a draw, all items (excluding those defining `always_drop` as true) are added to a 'bag' `stock` number of times. 
 
 >Importantly, this does not effect the chance of the item being drawn. You can have 10,000 bananas and 1 apple but both are equally likely to be drawn. 
 
@@ -75,7 +75,7 @@ stock = 2 # This item can be grabbed 2 times at max
 This field can not use any special syntax.
 
 ## Cost
-With a default of 0, this field can be ignored in most cases. It is used as a way to "spend" a balance when selecting a table of things.
+With a default of 0, this field can be ignored in most cases. It is used as a way to 'spend' a balance when selecting a table of things.
 This is mostly used in the context of enemy wave spawning, but it can be used in other places too. For this example, we'll show it in the context of spawning enemies. Starting with a basic table file:
 ```
 [[slime]]
@@ -85,7 +85,7 @@ cost = 1
 cost = 20
 ```
 
-Let's suppose you're spawning a wave of slimes. Passed into the `Draw` method will be a "balance" which will represent the difficulty of the wave to spawn. If that difficulty is over 20 then there will be a chance to spawn a `slime_boss`. For each grab, the cost of the grab is subtracted from the balance. This repeats until you either run out of `drops` or you run out of `balance`.
+Let's suppose you're spawning a wave of slimes. Passed into the `Draw` method will be a 'balance' which will represent the difficulty of the wave to spawn. If that difficulty is over 20 then there will be a chance to spawn a `slime_boss`. For each grab, the cost of the grab is subtracted from the balance. This repeats until you either run out of `drops` or you run out of `balance`.
 
 
 ## Groups
@@ -104,7 +104,7 @@ groups = [0, 1]
 Importantly, groups do not trigger chain reactions. If `coin` was grabbed then it would also grab `soul`, but soul's groups are not then grabbed too, so `bone` is not grabbed.
 
 ## Triggers
-A trigger is a one way group. It will cause anything in the specified group ids to be grabbed, but does not say anything about what group the item is in.
+A trigger is a one way group. It will cause everything in the specified group ids to be grabbed, but does not say anything about what group the item is in.
 
 ```
 [[bone]]
@@ -115,17 +115,33 @@ groups = [0]
 ```
 If `bone` is grabbed then it triggers group `0` and grabs `coin`. If `coin` is grabbed, it also triggers group `0`, but since `bone` is not in that group it does nothing.
 
+A trigger can also be defined as a table with more properties for finer control. This adds 2 aditional fields, those being the `count` and `condition` fields. Starting with `count` as it is the simplest to understand:
+
+```
+triggers = [{ groups = [0,3], count = '1..3' }]
+```
+
+The above trigger will choose a range of 1 to 3 drops that are within the groups 0 and 3. Importantly, this is influenced by the individual drops weights.
+
+`condition` is a much more technical field and will only be shown with a surface level example here.
+
+```
+triggers = [{ groups = [1], condition = 'Attributes INCLUDES "fire"' }]
+```
+
+As you may be able to figure out from the example, this trigger will only fire if something called "Attributes" contains "fire". The specifics of this are beyond the scope of this page, to learn more about conditions you can check out [Context & Conditions](context-and-conditions.md)
+
 # Other stuff
 ## Range Syntax
 Defienes an integer randomly chosen within the range `min..max`.
 ```
-drops_count = "0..10" # Chooses a random number from 0 to 10 (inclusive).
+drops_count = '0..10' # Chooses a random number from 0 to 10 (inclusive).
 ```
 
 ## List Syntax
 Defines an integer randomly chosen from a list `n1,n2,n3`
 ```
-drops_count = "0,10" # Choses either 0 or 10
+drops_count = '0,10' # Choses either 0 or 10
 ```
 
 ## Chance Object
@@ -133,7 +149,7 @@ To be used in place of Ranges or Lists, this alters the behaviour of integer fun
 
 Below is a basic use of a Chance Object:
 ```
-drops_count = { value = "0..5", chance = 0.5 }
+drops_count = { value = '0..5', chance = 0.5 }
 ```
 
 As it may be clear, this count will evaluate to a range between 0 and 5. However, unlike the Range Syntax, this range is weighted to give lower values more frequently than higher values. A chance below 1 will weigh towards the lower bound and a chance above 1 weighs towards the upper bound. A chance of exactly 1 means equal probability across all values. The bounds are never exceeded. 
