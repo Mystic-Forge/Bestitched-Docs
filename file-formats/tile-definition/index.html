@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Bestitched-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756735706599">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756903822532">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,6 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Tile Definition</title>
     <meta name="title" content="Tile Definition">
+    <meta name="description" content="A tile definition is a toml file that defines a tile. The name of the toml file is the Id of the tile.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://mystic-forge.github.io/Bestitched-Docs/file-formats/tile-definition/">
@@ -20,19 +21,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mystic-forge.github.io/Bestitched-Docs/file-formats/tile-definition/">
     <meta property="og:title" content="Tile Definition">
+    <meta property="og:description" content="A tile definition is a toml file that defines a tile. The name of the toml file is the Id of the tile.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mystic-forge.github.io/Bestitched-Docs/file-formats/tile-definition/">
     <meta property="twitter:title" content="Tile Definition">
+    <meta property="twitter:description" content="A tile definition is a toml file that defines a tile. The name of the toml file is the Id of the tile.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.756735706599" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756903822532" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756903822532" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756903822532" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,6 +155,101 @@
         <doc-anchor-trigger class="header-anchor-trigger" to="#tile-definition">#</doc-anchor-trigger>
         <span>Tile Definition</span>
     </h1>
+</doc-anchor-target>
+<p>A tile definition is a toml file that defines a tile. The name of the toml file is the Id of the tile.</p>
+<doc-anchor-target id="basic-tile-definition">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-tile-definition">#</doc-anchor-trigger>
+        <span>Basic tile definition</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">type = 'basic'
+
+[fields]
+material = 'stone'</code></pre>
+</doc-codeblock></div>
+<p>The above file describes a <code v-pre>basic</code> tile with the material <code v-pre>stone</code>. The <code v-pre>type</code> field is used to determine which script to use. The <code v-pre>fields</code> table is where all the type specific fields are defined. In this example, the <code v-pre>basic</code> type has a single field <code v-pre>material</code>.</p>
+<doc-anchor-target id="tile-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tile-types">#</doc-anchor-trigger>
+        <span>Tile Types</span>
+    </h2>
+</doc-anchor-target>
+<p>Below is a list of all the tile types and their fields.</p>
+<p>Shared fields:
+| <strong>Field</strong> | <strong>Type</strong> | <strong>Description</strong>                |
+| --------- | -------- | ------------------------------ |
+| multi_tile_offsets  | int[3][]       | The offsets for the segments of a multi-tile. E.g: <code v-pre>[[0, 1, 0], [0, 2, 0]]</code> |</p>
+<doc-anchor-target id="basic">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic">#</doc-anchor-trigger>
+        <span>Basic</span>
+    </h3>
+</doc-anchor-target>
+<p>id: <code v-pre>basic</code></p>
+<p>A basic tile is a simple voxel tile. You cannot change its mesh, but you can change the material that it uses.
+| <strong>Field</strong> | <strong>Type</strong> | <strong>Description</strong>                |
+| --------- | -------- | ------------------------------ |
+| material  | Id       | The Id of the material to use. |</p>
+<doc-anchor-target id="cardinal">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cardinal">#</doc-anchor-trigger>
+        <span>Cardinal</span>
+    </h3>
+</doc-anchor-target>
+<p>id: <code v-pre>cardinal</code></p>
+<p>A cardinal tile takes a single mesh and provides 4 states, one for each cardinal direction.
+| <strong>Field</strong> | <strong>Type</strong> | <strong>Description</strong>                |
+| --------- | -------- | ------------------------------ |
+| material  | Id       | The Id of the material to use. |
+| mesh      | Id       | The Id of the mesh to use.     |</p>
+<doc-anchor-target id="breakable-decoration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#breakable-decoration">#</doc-anchor-trigger>
+        <span>Breakable Decoration</span>
+    </h3>
+</doc-anchor-target>
+<p>id: <code v-pre>breakable_decoration</code></p>
+<p>A breakable decoration is like a cardinal tile in that it can be rotated, but it also has a health state.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>material</td>
+<td>Id</td>
+<td>The Id of the material to use.</td>
+</tr>
+<tr>
+<td>damage_state_meshes</td>
+<td>Id[health]</td>
+<td>An array of Ids with the length equal to how much health the tile has. Each index directly corresponds to a health state. Index 0 is health 1, index 1 is health 2, etc...</td>
+</tr>
+<tr>
+<td>max_health</td>
+<td>int</td>
+<td>The amount of damage this tile can sustain.</td>
+</tr>
+<tr>
+<td>loot_table</td>
+<td>Id</td>
+<td>The Id of the loot table to use when the tile is destroyed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="field-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#field-types">#</doc-anchor-trigger>
+        <span>Field Types</span>
+    </h2>
 </doc-anchor-target>
 
                                 

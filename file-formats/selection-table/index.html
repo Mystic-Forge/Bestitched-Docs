@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Bestitched-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756735706599">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756903822532">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.756735706599" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756903822532" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756903822532" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756735706599" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756903822532" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -166,7 +166,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">[[coin]]
 
-[[&quot;my_package:my_item&quot;]]</code></pre>
+[['my_package:my_item']]</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="defaults">
     <h2>
@@ -253,7 +253,7 @@ count = 10 # Drops 10 bones</code></pre>
     </h2>
 </doc-anchor-target>
 <p>This defines how many times this item can be randomly picked from the selection table.</p>
-<p>At the start of a draw, all items (excluding those defining <code v-pre>always_drop</code> as true) are added to a &quot;bag&quot; <code v-pre>stock</code> number of times.</p>
+<p>At the start of a draw, all items (excluding those defining <code v-pre>always_drop</code> as true) are added to a &#x27;bag&#x27; <code v-pre>stock</code> number of times.</p>
 <blockquote>
 <p>Importantly, this does not effect the chance of the item being drawn. You can have 10,000 bananas and 1 apple but both are equally likely to be drawn.</p>
 </blockquote>
@@ -269,7 +269,7 @@ stock = 2 # This item can be grabbed 2 times at max</code></pre>
         <span>Cost</span>
     </h2>
 </doc-anchor-target>
-<p>With a default of 0, this field can be ignored in most cases. It is used as a way to &quot;spend&quot; a balance when selecting a table of things.
+<p>With a default of 0, this field can be ignored in most cases. It is used as a way to &#x27;spend&#x27; a balance when selecting a table of things.
 This is mostly used in the context of enemy wave spawning, but it can be used in other places too. For this example, we&#x27;ll show it in the context of spawning enemies. Starting with a basic table file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">[[slime]]
@@ -278,7 +278,7 @@ cost = 1
 [[slime_boss]]
 cost = 20</code></pre>
 </doc-codeblock></div>
-<p>Let&#x27;s suppose you&#x27;re spawning a wave of slimes. Passed into the <code v-pre>Draw</code> method will be a &quot;balance&quot; which will represent the difficulty of the wave to spawn. If that difficulty is over 20 then there will be a chance to spawn a <code v-pre>slime_boss</code>. For each grab, the cost of the grab is subtracted from the balance. This repeats until you either run out of <code v-pre>drops</code> or you run out of <code v-pre>balance</code>.</p>
+<p>Let&#x27;s suppose you&#x27;re spawning a wave of slimes. Passed into the <code v-pre>Draw</code> method will be a &#x27;balance&#x27; which will represent the difficulty of the wave to spawn. If that difficulty is over 20 then there will be a chance to spawn a <code v-pre>slime_boss</code>. For each grab, the cost of the grab is subtracted from the balance. This repeats until you either run out of <code v-pre>drops</code> or you run out of <code v-pre>balance</code>.</p>
 <doc-anchor-target id="groups">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#groups">#</doc-anchor-trigger>
@@ -303,7 +303,7 @@ groups = [0, 1]</code></pre>
         <span>Triggers</span>
     </h2>
 </doc-anchor-target>
-<p>A trigger is a one way group. It will cause anything in the specified group ids to be grabbed, but does not say anything about what group the item is in.</p>
+<p>A trigger is a one way group. It will cause everything in the specified group ids to be grabbed, but does not say anything about what group the item is in.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">[[bone]]
 triggers = [0]
@@ -312,6 +312,16 @@ triggers = [0]
 groups = [0]</code></pre>
 </doc-codeblock></div>
 <p>If <code v-pre>bone</code> is grabbed then it triggers group <code v-pre>0</code> and grabs <code v-pre>coin</code>. If <code v-pre>coin</code> is grabbed, it also triggers group <code v-pre>0</code>, but since <code v-pre>bone</code> is not in that group it does nothing.</p>
+<p>A trigger can also be defined as a table with more properties for finer control. This adds 2 aditional fields, those being the <code v-pre>count</code> and <code v-pre>condition</code> fields. Starting with <code v-pre>count</code> as it is the simplest to understand:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">triggers = [{ groups = [0,3], count = '1..3' }]</code></pre>
+</doc-codeblock></div>
+<p>The above trigger will choose a range of 1 to 3 drops that are within the groups 0 and 3. Importantly, this is influenced by the individual drops weights.</p>
+<p><code v-pre>condition</code> is a much more technical field and will only be shown with a surface level example here.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">triggers = [{ groups = [1], condition = 'Attributes INCLUDES &quot;fire&quot;' }]</code></pre>
+</doc-codeblock></div>
+<p>As you may be able to figure out from the example, this trigger will only fire if something called &quot;Attributes&quot; contains &quot;fire&quot;. The specifics of this are beyond the scope of this page, to learn more about conditions you can check out <a href="../context-and-conditions/">Context &amp; Conditions</a></p>
 <doc-anchor-target id="other-stuff">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-stuff">#</doc-anchor-trigger>
@@ -326,7 +336,7 @@ groups = [0]</code></pre>
 </doc-anchor-target>
 <p>Defienes an integer randomly chosen within the range <code v-pre>min..max</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">drops_count = &quot;0..10&quot; # Chooses a random number from 0 to 10 (inclusive).</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = '0..10' # Chooses a random number from 0 to 10 (inclusive).</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="list-syntax">
     <h2>
@@ -336,7 +346,7 @@ groups = [0]</code></pre>
 </doc-anchor-target>
 <p>Defines an integer randomly chosen from a list <code v-pre>n1,n2,n3</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">drops_count = &quot;0,10&quot; # Choses either 0 or 10</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = '0,10' # Choses either 0 or 10</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="chance-object">
     <h2>
@@ -347,7 +357,7 @@ groups = [0]</code></pre>
 <p>To be used in place of Ranges or Lists, this alters the behaviour of integer functions and extends their capabilities. As it stands, there is only 1 possible extension.</p>
 <p>Below is a basic use of a Chance Object:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">drops_count = { value = &quot;0..5&quot;, chance = 0.5 }</code></pre>
+<pre class="language-none"><code v-pre class="language-none">drops_count = { value = '0..5', chance = 0.5 }</code></pre>
 </doc-codeblock></div>
 <p>As it may be clear, this count will evaluate to a range between 0 and 5. However, unlike the Range Syntax, this range is weighted to give lower values more frequently than higher values. A chance below 1 will weigh towards the lower bound and a chance above 1 weighs towards the upper bound. A chance of exactly 1 means equal probability across all values. The bounds are never exceeded.</p>
 
@@ -359,11 +369,11 @@ groups = [0]</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../file-formats/context-and-conditions/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Bestitched</span>
+                                                <span class="block mt-1">Context & Conditions</span>
                                             </span>
                                         </a>
                                     </div>
