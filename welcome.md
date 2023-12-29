@@ -8,17 +8,25 @@ Rogue-like survival game where you start in a chunk of land with nothing but an 
 - [x] Item pickup
 - [x] Enemies
 - [x] Combat
-- [x] Death
 - [x] Collectable resources
 - [x] Profiling system
 - [x] Portal at spawn
 - [x] Structure generation
 - [x] Build mode
-- [ ] Building resources
-- [ ] Random generators
-- [ ] Wires, conveyors, pipes, etc...
-- [ ] Working portal
+- [x] Building resources
+- [x] Objective system
+- [x] Specter mode / death
+- [x] Respawn when falling off map
+- [ ] Fog damage (Status effects)
+- [ ] UI Scaling
+- [ ] Better combat controls
+- [ ] Better enemy AI
+- [ ] Weapon upgrading
+- [ ] Basic Working portal (Regenerate world)
+- [ ] Multiplayer
 - [ ] Audio System
+- [ ] Hub domain
+- [ ] Working portal
 
 ## Bugs
 - Spamming attack keeps arm up for a long time

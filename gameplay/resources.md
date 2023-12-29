@@ -1,6 +1,6 @@
 # Resources
 ## Buttons
-A generic drop from most structures and enemies. Used as currency
+A generic drop from most structures and enemies. Used as currency.
 
 ## Soul
 A fuel source for various structures.
