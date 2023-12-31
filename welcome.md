@@ -17,16 +17,16 @@ Rogue-like survival game where you start in a chunk of land with nothing but an 
 - [x] Objective system
 - [x] Specter mode / death
 - [x] Respawn when falling off map
-- [ ] Fog damage (Status effects)
-- [ ] UI Scaling
-- [ ] Better combat controls
+- [x] Fog damage (Status effects)
+- [x] UI Scaling
+- [x] Better combat controls
 - [ ] Better enemy AI
 - [ ] Weapon upgrading
 - [ ] Basic Working portal (Regenerate world)
 - [ ] Multiplayer
 - [ ] Audio System
 - [ ] Hub domain
-- [ ] Working portal
+- [ ] Real Working portal
 
 ## Bugs
 - Spamming attack keeps arm up for a long time
