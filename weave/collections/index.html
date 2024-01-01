@@ -10,32 +10,33 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Controls</title>
-    <meta name="title" content="Controls">
-    <meta name="description" content="Action">
+    <title>Collections</title>
+    <meta name="title" content="Collections">
+    <meta name="description" content="A collection is any enumerable set of data.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://mystic-forge.github.io/Bestitched-Docs/controls/">
+    <link rel="canonical" href="https://mystic-forge.github.io/Bestitched-Docs/weave/collections/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mystic-forge.github.io/Bestitched-Docs/controls/">
-    <meta property="og:title" content="Controls">
-    <meta property="og:description" content="Action">
+    <meta property="og:url" content="https://mystic-forge.github.io/Bestitched-Docs/weave/collections/">
+    <meta property="og:title" content="Collections">
+    <meta property="og:description" content="A collection is any enumerable set of data.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mystic-forge.github.io/Bestitched-Docs/controls/">
-    <meta property="twitter:title" content="Controls">
-    <meta property="twitter:description" content="Action">
+    <meta property="twitter:url" content="https://mystic-forge.github.io/Bestitched-Docs/weave/collections/">
+    <meta property="twitter:title" content="Collections">
+    <meta property="twitter:description" content="A collection is any enumerable set of data.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.757395689981" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.757395689981" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.757395689981" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.757395689981" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.757395689981" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.757395689981" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.757395689981" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +51,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Bestitched</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -150,60 +151,98 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="controls" class="break-words">
+<doc-anchor-target id="collections" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#controls">#</doc-anchor-trigger>
-        <span>Controls</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#collections">#</doc-anchor-trigger>
+        <span>Collections</span>
     </h1>
 </doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Action</th>
-<th>Keybind</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Move</td>
-<td>W,A,S,D</td>
-</tr>
-<tr>
-<td>Jump</td>
-<td>Space</td>
-</tr>
-<tr>
-<td>Roll</td>
-<td>Shift</td>
-</tr>
-<tr>
-<td>Light Attack</td>
-<td>L-Click</td>
-</tr>
-<tr>
-<td>Heavy Attack</td>
-<td>R-Click</td>
-</tr>
-<tr>
-<td>Select Target</td>
-<td>Ctrl + L-Click</td>
-</tr>
-<tr>
-<td>Cycle Selected Enemies</td>
-<td>Ctrl + Scroll</td>
-</tr>
-<tr>
-<td>Toggle Build Mode</td>
-<td>B</td>
-</tr>
-<tr>
-<td>Build Menu</td>
-<td>Tab</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>A collection is any enumerable set of data.</p>
+<doc-anchor-target id="for-loops">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#for-loops">#</doc-anchor-trigger>
+        <span>For Loops</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">for item in collection do
+    ...
+end</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="where">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#where">#</doc-anchor-trigger>
+        <span>Where</span>
+    </h2>
+</doc-anchor-target>
+<p><code v-pre>where</code> is a filter that can be applied to a collection to get a subset of the collection. <code v-pre>it</code> is a special variable that refers to the current item in the collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp even_numbers = numbers where it % 2 is 0</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="ordering">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ordering">#</doc-anchor-trigger>
+        <span>Ordering</span>
+    </h2>
+</doc-anchor-target>
+<p>Using <code v-pre>&lt;collection&gt; ordered by &lt;number selector&gt; &lt;direction&gt;</code> will sort the collection by the given collection in the given direction. Once again <code v-pre>it</code> is a special variable that refers to the current item in the collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [5, 3, 1, 4, 2]
+    temp ordered_numbers = numbers ordered by it ascending
+    # ordered_numbers is now [1, 2, 3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="skip--take">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#skip--take">#</doc-anchor-trigger>
+        <span>Skip / Take</span>
+    </h2>
+</doc-anchor-target>
+<p><code v-pre>&lt;collection&gt; skip &lt;number&gt;</code> will return a new collection with the first <code v-pre>&lt;number&gt;</code> items removed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp last_three_numbers = skip 2 of numbers
+    # last_three_numbers is now [3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>&lt;collection&gt; take &lt;number&gt;</code> will return a new collection with only the first <code v-pre>&lt;number&gt;</code> items.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp first_three_numbers = take 3 of numbers
+    # first_three_numbers is now [1, 2, 3]</code></pre>
+</doc-codeblock></div>
+<p>Combining <code v-pre>skip</code> and <code v-pre>take</code> can be used to get a subset of a collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">    temp numbers = [1, 2, 3, 4, 5]
+    temp middle_three_numbers = skip 1 take 3 of numbers
+    # middle_three_numbers is now [2, 3, 4]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="ranges">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ranges">#</doc-anchor-trigger>
+        <span>Ranges</span>
+    </h2>
+</doc-anchor-target>
+<p>You can define a range of values using <code v-pre>&lt;start&gt; to &lt;end&gt; &lt;inclusive/exclusive&gt;</code>. Start will always be inclusive and end will be inclusive or exclusive depending on the keyword used.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = 1 to 5 inclusive
+    # numbers is now [1, 2, 3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = 1 to 5 exclusive
+    # numbers is now [1, 2, 3, 4]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="extracting-individual-items">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extracting-individual-items">#</doc-anchor-trigger>
+        <span>Extracting Individual Items</span>
+    </h2>
+</doc-anchor-target>
+<p>You can extract individual items from a collection using <code v-pre>index &lt;number&gt; of &lt;collection&gt;</code>. The first item in a collection is at index 0.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp first_number = index 0 of numbers
+    # first_number is now 1</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -213,16 +252,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../weave/introduction/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gameplay/world-generation/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Lang Outline</span>
+                                                <span class="block mt-1">World Generation</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../weave/introduction/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Lang Outline</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -263,6 +309,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Controls", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Collections", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
