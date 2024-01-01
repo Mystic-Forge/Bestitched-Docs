@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Bestitched-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.757372536830">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.757395262780">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,11 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.757372536830" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.757395262780" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.757372536830" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.757395262780" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.757372536830" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.757395262780" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.757395262780" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -157,6 +158,22 @@
     </h1>
 </doc-anchor-target>
 <p>This language is made with the goal of expressing ai behaviors in a way that is easy to read and write while also being flexible.</p>
+<doc-anchor-target id="comments">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comments">#</doc-anchor-trigger>
+        <span>Comments</span>
+    </h2>
+</doc-anchor-target>
+<p>Comments are used to add notes to your code that will be ignored by the compiler.</p>
+<p>The syntax is undecided. Here are the current proposals:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none"># Single line comment
+
+#-
+Multi line comment
+Wow!
+-#</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="variables">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
@@ -171,7 +188,27 @@
 </doc-anchor-target>
 <p>For declaring a temporary variable that will be lost beyond the current scope.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">temp x = 1</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">temp x = 1</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="accessors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accessors">#</doc-anchor-trigger>
+        <span>Accessors</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="of">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#of">#</doc-anchor-trigger>
+        <span>Of</span>
+    </h3>
+</doc-anchor-target>
+<p>For accessing a property of an object.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">temp position = position of self</code></pre>
+</doc-codeblock></div>
+<p>You can chain <code v-pre>of</code> to access nested properties.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">temp x = x of position of self</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="save--load">
     <h3>
@@ -181,26 +218,26 @@
 </doc-anchor-target>
 <p>For declaring variables that can be saves to the current entities &quot;memory&quot; and loaded later.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">temp x = 1
+<pre class="language-ruby"><code v-pre class="language-ruby">temp x = 1
 save x
 ...
 load x</code></pre>
 </doc-codeblock></div>
 <p>You can rename the loaded or saved variable with the <code v-pre>as</code> keyword.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">save x as amazing_x
+<pre class="language-ruby"><code v-pre class="language-ruby">save x as amazing_x
 ...
 load amazing_x as x
 </code></pre>
 </doc-codeblock></div>
 <p>You can also access memories of other entities using the <code v-pre>from</code> keyword.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">load amazing_x from other_entity as x</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">load amazing_x from other_entity as x</code></pre>
 </doc-codeblock></div>
 <blockquote>
 <p>A handy shorthand for saving literals is to use the <code v-pre>as</code> keyword.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">save 1 as x</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">save 1 as x</code></pre>
 </doc-codeblock></div>
 </blockquote>
 <doc-anchor-target id="methods">
@@ -211,7 +248,7 @@ load amazing_x as x
 </doc-anchor-target>
 <p>Receiving a method from heaven?... Maaarc.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">on my_method do
+<pre class="language-ruby"><code v-pre class="language-ruby">on my_method do
     ...
 end</code></pre>
 </doc-codeblock></div>
@@ -221,17 +258,15 @@ end</code></pre>
         <span>Events</span>
     </h3>
 </doc-anchor-target>
-<p>Receiving broadcasted events</p>
+<p>Broadcasting messages</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">receive some_broadcast with variable1, variable2 do
+<pre class="language-ruby"><code v-pre class="language-ruby">broadcast enemy_scouted_event with nearby_enemy</code></pre>
+</doc-codeblock></div>
+<p>Receiving broadcasted messages</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">receive some_broadcast with variable1, variable2 do
     ...
 end</code></pre>
-</doc-codeblock></div>
-<p>Broadcasting events</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">broadcast enemy_scouted_event with nearby_enemy
-or ??
-broadcast nearby_enemy as enemy_scouted_event</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="import--export">
     <h2>
@@ -241,11 +276,11 @@ broadcast nearby_enemy as enemy_scouted_event</code></pre>
 </doc-anchor-target>
 <p>An import is how we can access methods, variables, and litarals from other files.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">import builtin/math/distance_between as distance</code></pre>
+<pre class="language-python"><code v-pre class="language-python">import builtin/math/distance_between as distance</code></pre>
 </doc-codeblock></div>
 <p>An export is how we can make our methods, variables, or literals available to other files to import.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">export &quot;Coffee&quot; as docs_author</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">export &quot;Coffee&quot; as docs_author</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="collections">
     <h2>
@@ -261,7 +296,7 @@ broadcast nearby_enemy as enemy_scouted_event</code></pre>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">for item in collection do
+<pre class="language-ruby"><code v-pre class="language-ruby">for item in collection do
     ...
 end</code></pre>
 </doc-codeblock></div>
@@ -273,9 +308,80 @@ end</code></pre>
 </doc-anchor-target>
 <p><code v-pre>where</code> is a filter that can be applied to a collection to get a subset of the collection. <code v-pre>it</code> is a special variable that refers to the current item in the collection.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">    temp numbers = [1, 2, 3, 4, 5]
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
     temp even_numbers = numbers where it % 2 is 0</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="ordering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ordering">#</doc-anchor-trigger>
+        <span>Ordering</span>
+    </h3>
+</doc-anchor-target>
+<p>Using <code v-pre>&lt;collection&gt; ordered by &lt;number selector&gt; &lt;direction&gt;</code> will sort the collection by the given collection in the given direction. Once again <code v-pre>it</code> is a special variable that refers to the current item in the collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [5, 3, 1, 4, 2]
+    temp ordered_numbers = numbers ordered by it ascending
+    # ordered_numbers is now [1, 2, 3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="skip--take">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#skip--take">#</doc-anchor-trigger>
+        <span>Skip / Take</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>&lt;collection&gt; skip &lt;number&gt;</code> will return a new collection with the first <code v-pre>&lt;number&gt;</code> items removed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp last_three_numbers = numbers skip 2
+    # last_three_numbers is now [3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>&lt;collection&gt; take &lt;number&gt;</code> will return a new collection with only the first <code v-pre>&lt;number&gt;</code> items.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp first_three_numbers = numbers take 3
+    # first_three_numbers is now [1, 2, 3]</code></pre>
+</doc-codeblock></div>
+<p>Combining <code v-pre>skip</code> and <code v-pre>take</code> can be used to get a subset of a collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">    temp numbers = [1, 2, 3, 4, 5]
+    temp middle_three_numbers = numbers skip 1 take 3
+    # middle_three_numbers is now [2, 3, 4]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="ranges">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ranges">#</doc-anchor-trigger>
+        <span>Ranges</span>
+    </h3>
+</doc-anchor-target>
+<p>You can define a range of values using <code v-pre>&lt;start&gt; to &lt;end&gt; &lt;inclusive/exclusive&gt;</code>. Start will always be inclusive and end will be inclusive or exclusive depending on the keyword used.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = 1 to 5 inclusive
+    # numbers is now [1, 2, 3, 4, 5]</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = 1 to 5 exclusive
+    # numbers is now [1, 2, 3, 4]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="extracting-values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extracting-values">#</doc-anchor-trigger>
+        <span>Extracting Values</span>
+    </h3>
+</doc-anchor-target>
+<p>Similar to property access, you can use <code v-pre>of</code> to extract a value from a collection.</p>
+<p>Providing a number will return the item at that index in the collection.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp first_number = 0 of numbers
+    # first_number is now 1</code></pre>
+</doc-codeblock></div>
+<p>You can get a subset of the collection using a range.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">    temp numbers = [1, 2, 3, 4, 5]
+    temp first_three_numbers = 0 to 2 of numbers
+    # first_three_numbers is now [1, 2, 3]</code></pre>
+</doc-codeblock></div>
+<p>You</p>
 <doc-anchor-target id="expressions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#expressions">#</doc-anchor-trigger>
@@ -290,30 +396,144 @@ end</code></pre>
 </doc-anchor-target>
 <p>An if expression evaluates a condition and executes the <code v-pre>then</code> part if the condition was true.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if x is 1 then
-    say &quot;x is 1&quot;
+<pre class="language-ruby"><code v-pre class="language-ruby">if x is 1 then
+    print &quot;x is 1&quot;
 end</code></pre>
 </doc-codeblock></div>
 <p>You can replace the <code v-pre>end</code> with an <code v-pre>else</code> to execute a different block of code if the condition was false.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if x is 1 then
-    say &quot;x is 1&quot;
+<pre class="language-ruby"><code v-pre class="language-ruby">if x is 1 then
+    print &quot;x is 1&quot;
 else
-    say &quot;x is not 1&quot;
+    print &quot;x is not 1&quot;
 end</code></pre>
 </doc-codeblock></div>
 <p>You can also chain <code v-pre>else if</code> statements to check multiple conditions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if x is 1 then
-    say &quot;x is 1&quot;
+<pre class="language-ruby"><code v-pre class="language-ruby">if x is 1 then
+    print &quot;x is 1&quot;
 else if x is 2 then
-    say &quot;x is 2&quot;
+    print &quot;x is 2&quot;
 else if x is 3 then
-    say &quot;x is 3&quot;
+    print &quot;x is 3&quot;
 else
-    say &quot;x is not 1 or 2&quot;
+    print &quot;x is not 1 or 2&quot;
 end</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="operators">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#operators">#</doc-anchor-trigger>
+        <span>Operators</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="arithmetic">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arithmetic">#</doc-anchor-trigger>
+        <span>Arithmetic</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>+</code></td>
+<td><code v-pre>x + y</code></td>
+<td>Adds <code v-pre>x</code> and <code v-pre>y</code></td>
+</tr>
+<tr>
+<td><code v-pre>-</code></td>
+<td><code v-pre>x - y</code></td>
+<td>Subtracts <code v-pre>y</code> from <code v-pre>x</code></td>
+</tr>
+<tr>
+<td><code v-pre>*</code></td>
+<td><code v-pre>x * y</code></td>
+<td>Multiplies <code v-pre>x</code> and <code v-pre>y</code></td>
+</tr>
+<tr>
+<td><code v-pre>/</code></td>
+<td><code v-pre>x / y</code></td>
+<td>Divides <code v-pre>x</code> by <code v-pre>y</code></td>
+</tr>
+<tr>
+<td><code v-pre>%</code></td>
+<td><code v-pre>x % y</code></td>
+<td>Gets the remainder of <code v-pre>x</code> divided by <code v-pre>y</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="comparison">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comparison">#</doc-anchor-trigger>
+        <span>Comparison</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>not</code></td>
+<td><code v-pre>not x</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is <code v-pre>false</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>is</code></td>
+<td><code v-pre>x is y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is equal to <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>is not</code></td>
+<td><code v-pre>x is not y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is not equal to <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>and</code></td>
+<td><code v-pre>x and y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> and <code v-pre>y</code> are both <code v-pre>true</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>or</code></td>
+<td><code v-pre>x or y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> or <code v-pre>y</code> are <code v-pre>true</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>&gt;</code></td>
+<td><code v-pre>x &gt; y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is greater than <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>&lt;</code></td>
+<td><code v-pre>x &lt; y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is less than <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>&gt;=</code></td>
+<td><code v-pre>x &gt;= y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is greater than or equal to <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>&lt;=</code></td>
+<td><code v-pre>x &lt;= y</code></td>
+<td>Returns <code v-pre>true</code> if <code v-pre>x</code> is less than or equal to <code v-pre>y</code> and <code v-pre>false</code> otherwise</td>
+</tr>
+</tbody>
+</table>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -380,6 +600,6 @@ end</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Lang Outline", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Lang Outline", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
