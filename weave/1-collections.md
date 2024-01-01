@@ -8,6 +8,28 @@ for item in collection do
 end
 ```
 
+To skip the current item in the loop use `next`.
+```rb
+temp numbers = [1, 2, 3, 4, 5]
+for item in numbers do
+    if item % 2 is 0 then
+        next
+    end
+end
+# This loop will skip all even numbers
+```
+
+To stop a loop early use `stop`
+```rb
+temp numbers = [1, 2, 3, 4, 5]
+for item in numbers do
+    if item is 3 then
+        stop
+    end
+end
+# This loop will stop when it reaches the third item
+```
+
 ## Where
 `where` is a filter that can be applied to a collection to get a subset of the collection. `it` is a special variable that refers to the current item in the collection.
 ```rb

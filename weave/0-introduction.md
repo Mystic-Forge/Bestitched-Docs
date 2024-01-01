@@ -1,5 +1,5 @@
-# Lang Outline
-This language is made with the goal of expressing ai behaviors in a way that is easy to read and write while also being flexible.
+# Introduction
+This language is made with the goal of expressing AI behaviors in a way that is easy to read and write while also being flexible.
 
 ## Comments
 Comments are used to add notes to your code that will be ignored by the compiler.
@@ -34,7 +34,7 @@ temp x = x of position of self
 ```
 
 ### Save / Load
-For declaring variables that can be saves to the current entities "memory" and loaded later.
+For declaring variables that can be saved to the current entities "memory" and loaded later.
 ```rb
 temp x = 1
 save x
@@ -50,10 +50,12 @@ load amazing_x as x
 
 ```
 
-You can also access memories of other entities using the `from` keyword.
-```rb
-load amazing_x from other_entity as x
-```
+> __THIS IS UNDER REVIEW__
+>
+> You can also access memories of other entities using the `from` keyword.
+> ```rb
+> load amazing_x from other_entity as x
+> ```
 
 > A handy shorthand for saving literals is to use the `as` keyword.
 > ```rb
